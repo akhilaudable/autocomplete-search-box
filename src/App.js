@@ -21,10 +21,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    let timer = setTimeout(fetchData, 300);
-    return () => {
-      clearTimeout(timer);
-    };
+    fetchData()
   }, [searchInput]);
 
   return (
@@ -36,17 +33,20 @@ export default function App() {
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}
+          value={searchInput}
           onFocus={() => setShowList(true)}
-          onBlur={() => setShowList(false)}
         />
       </div>
       {showList && (
         <div className="result-container">
           {searchData.map((item) => {
             return (
-              <span className="result" key={item.id}>
+              <div onClick={(e) => {  
+                  setSearchInput(item.name)
+                  setShowList(false)
+                }} className="result" key={item.id}>
                 {item.name}
-              </span>
+              </div>
             );
           })}
         </div>
