@@ -1,0 +1,30 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.search-name {
+  width: 200px;
+  height: 25px;
+  padding: 5px;
+}
+
+.result-container {
+  width: 200px;
+  margin: auto;
+  border: 1px solid black;
+  padding: 5px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.result {
+  display: block;
+  text-align: left;
+  padding: 5px;
+}
+
+.result:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+}
